@@ -1,28 +1,46 @@
-<h1 class="title">
-Bulma
-</h1>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p class="title">Gekita</p>
+        </a>
+    </div>
+    <div class="column is-two-fifths">
+        <div class="field">
+            <div class="control">
+                <input class="input" type="text" placeholder="タイトル">
+            </div>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <a class="navbar-item">
+            <span class="icon is-large">
+                <%= fa_icon 'save 2x' %>
+            </span>
+        </a>
+        <a class="navbar-item">
+            <span class="icon is-large">
+                <%= fa_icon 'user-circle 2x' %>
+            </span>
+        </a>
+    </div>
 
-<p class="subtitle">
-Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-</p>
+</nav>
 
-<div class="field">
-<div class="control">
-    <input class="input" type="text" placeholder="Input">
-</div>
-</div>
-
-<div class="field">
-<p class="control">
-    <span class="select">
-    <select>
-        <option>Select dropdown</option>
-    </select>
-    </span>
-</p>
-</div>
-
-<div class="buttons">
-<a class="button is-primary">Primary</a>
-<a class="button is-link">Link</a>
-</div>
+<section class="section">
+    <div class="columns">
+        <div class="column is-half">
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea has-fixed-size" placeholder="入力してください" rows="30"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea has-fixed-size" rows="30" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
