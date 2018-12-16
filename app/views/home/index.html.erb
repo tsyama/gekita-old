@@ -33,14 +33,19 @@
         <div class="column is-half">
             <div class="field">
                 <div class="control">
-                    <textarea class="textarea has-fixed-size" placeholder="入力してください" rows="30"></textarea>
+                    <div id="gekiBody">
+                        <textarea v-model="body" class="textarea has-fixed-size" placeholder="入力してください" rows="30"></textarea>
+
+                    </div>
                 </div>
             </div>
         </div>
         <div class="column is-half">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea has-fixed-size" rows="30" disabled></textarea>
+            <div id="gekiPreview" style="height: 100%">
+                <div class="card" style="height: 100%">
+                    <div class="card-content">
+                        <p style="white-space: pre;" v-text="body"></p>
+                    </div>
                 </div>
             </div>
         </div>
