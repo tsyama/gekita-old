@@ -2,7 +2,10 @@
   "name": "gekita",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "https://github.com/rails/webpacker"
+    "@rails/webpacker": "https://github.com/rails/webpacker",
+    "vue": "^2.5.21",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.21"
   },
   "devDependencies": {
     "bulma": "^0.7.2",
