@@ -61,11 +61,11 @@ function lineParser(line)
 
     var dooCheck = line.match(/^\t(.*)/);
     if (dooCheck) {
-        return '<tr><td colspan="2"><span>　' + dooCheck[1] + '</span></td></tr>'
+        return '<tr><td colspan="2" class="doo"><span>' + dooCheck[1] + '</span></td></tr>'
     }
     var serifs = line.split("\t");
     if (serifs.length >= 2) {
-        line = '<tr><td><span class="tag">' + serifs[0] + '</span></td><td><span>' + serifs[1] + '</span></td></tr>';
+        line = '<tr><td><span class="tag">' + serifs[0] + '</span></td><td class="serif"><span>' + serifs[1] + '</span></td></tr>';
     }
     return line;
 }
