@@ -7,6 +7,26 @@
 // $midnight-blue: #252a35;
 $thin-black: #5f5f5f;
 
+$tag-red: #C62828;
+$tag-pink: #AD1457;
+$tag-purple: #6A1B9A;
+$tag-deep-purple: #4527A0;
+$tag-indigo: #283593;
+$tag-blue: #1565C0;
+$tag-light-blue: #0277BD;
+$tag-cyan: #00838F;
+$tag-teal: #00695C;
+$tag-green: #2E7D32;
+$tag-light-green: #558B2F;
+$tag-lime: #9E9D24;
+$tag-yellow: #F9A825;
+$tag-amber: #FF8F00;
+$tag-orange: #EF6C00;
+$tag-deep-orange: #D84315;
+$tag-brown: #4E342E;
+$tag-grey: #424242;
+$tag-blue-grey: #37474F;
+
 .geki-editor {
     .title {
         color: $thin-black;
@@ -15,9 +35,6 @@ $thin-black: #5f5f5f;
         border-style: none;
     }
     .table.is-narrow {
-        td, th {
-            padding: 0 0;
-        }
         .doo {
             padding-left: 50px;
         }
@@ -26,7 +43,66 @@ $thin-black: #5f5f5f;
         }
     }
     .tag {
-        background-color: #ac8b66;
+        background-color: $tag-blue-grey;
         color: #eeeeee
+    }
+    .tag {
+        &.red {
+            background-color: $tag-red;
+        }
+        &.pink {
+            background-color: $tag-pink;
+        }
+        &.purple {
+            background-color: $tag-purple;
+        }
+        &.deep-purple {
+            background-color: $tag-deep-purple;
+        }
+        &.indigo {
+            background-color: $tag-indigo;
+        }
+        &.blue {
+            background-color: $tag-blue;
+        }
+        &.light-blue {
+            background-color: $tag-light-blue;
+        }
+        &.cyan {
+            background-color: $tag-cyan;
+        }
+        &.teal {
+            background-color: $tag-teal;
+        }
+        &.green {
+            background-color: $tag-green;
+        }
+        &.light-green {
+            background-color: $tag-light-green;
+        }
+        &.lime {
+            background-color: $tag-lime;
+        }
+        &.yellow {
+            background-color: $tag-yellow;
+        }
+        &.amber {
+            background-color: $tag-amber;
+        }
+        &.orange {
+            background-color: $tag-orange;
+        }
+        &.deep-orange {
+            background-color: $tag-deep-orange;
+        }
+        &.brown {
+            background-color: $tag-brown;
+        }
+        &.grey {
+            background-color: $tag-grey;
+        }
+        &.blue-grey {
+            background-color: $tag-blue-grey;
+        }
     }
 }

@@ -1,5 +1,8 @@
 import Vue from 'vue'
 
+var castList = [];
+var contentStartFlag = false;
+
 var gekiTitle = new Vue({
     el: "#gekiTitle",
     data: {
@@ -24,6 +27,7 @@ var gekiBody = new Vue({
     },
     updated: function() {
         gekiPreview.body = gekiParser(this.body);
+        addTagClass();
     },
     methods: {
         tabber: function(e) {
@@ -39,6 +43,8 @@ var gekiBody = new Vue({
 
 function gekiParser(text)
 {
+    contentStartFlag = false;
+    castList = [];
     var lines = text.split("\n");
 
     var result = '';
@@ -52,20 +58,61 @@ function gekiParser(text)
 function lineParser(line)
 {
     if (line === '') {
-        return '<tr><td colspan="2">　</td></tr>';
+        if (contentStartFlag) {
+            return '<tr><td colspan="2">　</td></tr>';
+        } else {
+            return '';
+        }
     }
-    var titleCheck = line.match(/^# (.*)/);
-    if (titleCheck) {
-        return '<tr><td colspan="2"><p class="title">' + titleCheck[1] + '</p></td></tr>';
+    var castCheck = line.match(/^= (.*)\t(.*)/);
+    if (castCheck) {
+        castList.push({
+            cast: castCheck[1],
+            className: castCheck[2]
+        });
+        return '';
     }
 
+    var titleCheck = line.match(/^# (.*)/);
+    if (titleCheck) {
+        contentStartFlag = true;
+        return '<tr><td colspan="2"><p class="title">' + titleCheck[1] + '</p></td></tr>';
+    }
     var dooCheck = line.match(/^\t(.*)/);
     if (dooCheck) {
+        contentStartFlag = true;
         return '<tr><td colspan="2" class="doo"><span>' + dooCheck[1] + '</span></td></tr>'
     }
     var serifs = line.split("\t");
     if (serifs.length >= 2) {
-        line = '<tr><td><span class="tag">' + serifs[0] + '</span></td><td class="serif"><span>' + serifs[1] + '</span></td></tr>';
+        contentStartFlag = true;
+        var castTagClass = getCastTagClass(serifs[0]);
+        line = '<tr><td><span class="tag ' + (castTagClass ? castTagClass : '') + '" name="' + serifs[0] + '">' + serifs[0] + '</span></td><td class="serif"><span>' + serifs[1] + '</span></td></tr>';
     }
+
     return line;
+}
+
+function addTagClass()
+{
+    for (var i = 0; i < castList.length; i++) {
+        var cast = castList[i];
+        var castTags = document.getElementsByName(cast.cast);
+        castTags.forEach(function(tag) {
+            if (!tag.classList.contains(cast.className)) {
+                tag.classList.add(cast.className);
+            }
+        });
+    }
+}
+
+function getCastTagClass(castName)
+{
+    for (var i = 0; i < castList.length; i++) {
+        var cast = castList[i];
+        if (cast.cast === castName) {
+            return cast.className;
+        }
+    }
+    return null;
 }
