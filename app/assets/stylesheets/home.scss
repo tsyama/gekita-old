@@ -28,6 +28,7 @@ $tag-grey: #424242;
 $tag-blue-grey: #37474F;
 
 .geki-editor {
+    overflow-y: scroll;
     .title {
         color: $thin-black;
     }
@@ -104,5 +105,28 @@ $tag-blue-grey: #37474F;
         &.blue-grey {
             background-color: $tag-blue-grey;
         }
+    }
+}
+
+#gekiNav .navbar-brand {
+    width: 80%;
+}
+
+#gekiTitle {
+    width: 100%;
+    input {
+        width: 100%;
+    }
+}
+
+#gekiSection {
+    padding: 10px;
+    padding-bottom: 0;
+    height: 90vh;
+    div, textarea, table {
+        height: 100%;
+    }
+    .column {
+        padding-bottom: 0;
     }
 }

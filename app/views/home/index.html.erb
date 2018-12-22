@@ -1,34 +1,17 @@
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<nav id="gekiNav" class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <p class="title">Gekita</p>
         </a>
-    </div>
-    <div class="column is-two-fifths">
-        <div class="field">
-            <div class="control">
-                <div id="gekiTitle">
-                    <input v-model="message" class="input" type="text" placeholder="タイトル">
-                </div>
+        <div class="navbar-item" style="width: 80%">
+            <div id="gekiTitle">
+                <input v-model="message" class="input" type="text" placeholder="タイトル">
             </div>
         </div>
     </div>
-    <div class="navbar-end">
-        <a class="navbar-item">
-            <span class="icon is-large">
-                <%= fa_icon 'save 2x' %>
-            </span>
-        </a>
-        <a class="navbar-item">
-            <span class="icon is-large">
-                <%= fa_icon 'user-circle 2x' %>
-            </span>
-        </a>
-    </div>
-
 </nav>
 
-<section class="section">
+<section class="section" id="gekiSection">
     <div class="columns">
         <div class="column is-half">
             <div class="field">
@@ -41,8 +24,8 @@
             </div>
         </div>
         <div class="column is-half">
-            <div id="gekiPreview" style="height: 100%">
-                <div class="card" style="height: 100%">
+            <div id="gekiPreview">
+                <div class="card">
                     <div class="card-content geki-editor">
                         <table class="table is-narrow" v-html="body">
                         </table>
