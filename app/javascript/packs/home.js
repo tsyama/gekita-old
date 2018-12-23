@@ -1,4 +1,5 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import axios from 'axios';
 
 var castList = [];
 var contentStartFlag = false;
@@ -37,6 +38,15 @@ var gekiBody = new Vue({
             var pos = elem.selectionStart;
             elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
             elem.setSelectionRange(pos + 1, pos + 1);
+        }
+    }
+});
+
+var pdfBtn = new Vue({
+    el: "#pdfBtn",
+    methods: {
+        toPdf: function() {
+            window.print();
         }
     }
 });

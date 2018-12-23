@@ -1,0 +1,24 @@
+@media print {
+    body {
+        background-color: white;
+    }
+    .card {
+        box-shadow: none !important;
+    }
+    #gekiEdit, #gekiNav {
+        display: none;
+    }
+    #gekiSection {
+        height: auto !important;
+    }
+    #gekiPreview {
+        width: 100%;
+        height: auto !important;
+        div, textarea, table {
+            height: auto;
+        }
+    }
+    .geki-editor {
+        overflow-y: visible !important;
+    }
+}

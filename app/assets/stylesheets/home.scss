@@ -45,7 +45,8 @@ $tag-blue-grey: #37474F;
     }
     .tag {
         background-color: $tag-blue-grey;
-        color: #eeeeee
+        color: #eeeeee;
+        font-weight: bold;
     }
     .tag {
         &.red {
@@ -128,5 +129,11 @@ $tag-blue-grey: #37474F;
     }
     .column {
         padding-bottom: 0;
+    }
+}
+
+#gekiPrint {
+    .geki-editor {
+        overflow: auto;
     }
 }
